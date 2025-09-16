@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পোর্টফোলিও - চ্যাট বট</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .chat-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .chat-demo {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .chat-header {
+            background: #6e8efb;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .chat-messages {
+            height: 300px;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f0f4ff;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+        }
+        
+        .bot-message .message-content {
+            background: #e6e9ff;
+            padding: 10px 15px;
+            border-radius: 18px 18px 18px 0;
+            max-width: 70%;
+        }
+        
+        .user-message {
+            justify-content: flex-end;
+        }
+        
+        .user-message .message-content {
+            background: #6e8efb;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 18px 18px 0 18px;
+            max-width: 70%;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            background: white;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+        
+        .chat-input button {
+            background: #6e8efb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .chat-input button:hover {
+            background: #5a7df9;
+        }
+        
+        .info-section {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-card h3 {
+            color: #6e8efb;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .info-card ul {
+            list-style-type: none;
+        }
+        
+        .info-card li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .info-card li:before {
+            content: "•";
+            color: #6e8efb;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #777;
+        }
+        
+        @media (max-width: 768px) {
+            .chat-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>পোর্টফোলিও ওয়েবসাইটে চ্যাট বট</h1>
+            <p>ভিজিটরদের সাথে সংযুক্ত থাকুন এবং তাদের তথ্য সংগ্রহ করুন</p>
+        </header>
+        
+        <div class="chat-container">
+            <div class="chat-demo">
+                <div class="chat-header">
+                    চ্যাট সহায়িকা
+                </div>
+                <div class="chat-messages">
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            হ্যালো! আমি আপনাকে কিভাবে  করতে পারি?
+                        </div>
+                    </div>
+                    <div class="message user-message">
+                        <div class="message-content">
+                            আপনার সাথে কাজ করতে আগ্রহী
+                        </div>
+                    </div>
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            great! আপনার ইমেল ঠিকানা করুন, আমি আপনার সাথে যোগাযোগ করব
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" placeholder="এখানে আপনার মেসেজ টাইপ করুন...">
+                    <button>পাঠান</button>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <div class="info-card">
+                    <h3>ব্যবহারকারী সনাক্তকরণের উপায়</h3>
+                    <ul>
+                        <li>চ্যাট শুরুর前に ইমেল সংগ্রহ করুন</li>
+                        <li>কুকি ব্যবহার করে সেশন ট্র্যাক করুন</li>
+                        <li>সোশ্যাল মিডিয়া প্রোফাইলের সাথে সংযোগ দিন</li>
+                        <li>ইউনিক ইউজার আইডি জেনারেট করুন</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>ডেটা সংরক্ষণের পদ্ধতি</h3>
+                    <ul>
+                        <li>ডেটাবেজে ব্যবহারকারীর তথ্য সংরক্ষণ করুন</li>
+                        <li>চ্যাট সংলাপ লগ হিসেবে রাখুন</li>
+                        <li>ইমেলের সাথে চ্যাট হিস্টরি লিঙ্ক করুন</li>
+                        <li>ব্যবহারকারীর интереভিত্তিক ট্যাগ যোগ করুন</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>পরবর্তীতে ব্যবহারকারী খুঁজে বের করা</h3>
+                    <ul>
+                        <li>ইমেল ঠিকানা দ্বারা খুঁজুন</li>
+                        <li>চ্যাট অনুসন্ধান করুন</li>
+                        <li>বিষয়বা প্রকল্প অনুযায়ী ফিল্টার করুন</li>
+                        <li>সোশ্যাল মিডিয়া প্রোফাইল দ্বারা সনাক্ত করুন</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 আপনার নাম - পোর্টফোলিও ওয়েবসাইট</p>
+        </footer>
+    </div>
+
+   
+</body>
+</html>
